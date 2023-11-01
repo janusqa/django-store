@@ -36,4 +36,14 @@ CIRCULAR DEPENDANCIES IN MODELS
 
 MIGRATIONS
 ---
-$ python manage.py makemigrations # generates a new migration
+$ python manage.py makemigrations # generates a new migration, can be ran multiple times as you change your models.  Then use below command to generate the schema
+$ python manage.py migrate # generate schema from migrations above.
+
+Revert a migration
+---
+$ python manage.py migrate <app-folder-name> <migration-number> # where xxxx is the migration number for that specific app in the migrations folder
+eg $ python manage.py migrate store 0003
+
+Now delete the migration file and roll back via git or manually to remove
+code you are reverting in the models
+$ git reset --hard HEAD~1
