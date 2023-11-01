@@ -54,4 +54,20 @@ ADD CUSTOM MIGRATION
 ---
 1) create empty migration
    $ python manage.py makemigrations store --empty
-   
+2) in the newly created migrations file in the operations array
+   eg. 
+       operations = [
+        migrations.RunSQL(
+            """
+            INSERT INTO store_collection (title)
+            VALUES ("collection1")
+            """,
+            """
+            DELETE FROM store_collection WHERE title="collection1"
+            """
+        )
+       ]
+    NOTE: the second arg to RunSQL is a sql statment that reverts the first statement.  We need it so we can use migrations to revert. 
+    The first arg migrates forwards to the new state of the db, the second 
+    arg migrates backward to the past state of the db
+    

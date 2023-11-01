@@ -17,7 +17,7 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=255)
-    birthdate = models.DateField(null=True)
+    birth_date = models.DateField(null=True)
     membership = models.CharField(
         max_length=1, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_BRONZE
     )
@@ -45,7 +45,7 @@ class Product(models.Model):
     description = models.TextField()
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
-    updated_at = models.DateTimeField(auto_now=True)
+    last_update = models.DateTimeField(auto_now=True)
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
     promotions = models.ManyToManyField(Promotion)
 
@@ -86,7 +86,6 @@ class CartItem(models.Model):
 class Address(models.Model):
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
-    zip = models.CharField(max_length=255, null=True)
     customer = models.ForeignKey(
         Customer,
         on_delete=models.CASCADE,
