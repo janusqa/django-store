@@ -1,0 +1,13 @@
+{
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.gpuAcceleration": "off",
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "files.associations": {
+        "*.html": "html"
+    },
+    "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
+        "editor.defaultFormatter": "monosans.djlint"
+    }
+}
