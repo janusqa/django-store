@@ -47,3 +47,11 @@ eg $ python manage.py migrate store 0003
 Now delete the migration file and roll back via git or manually to remove
 code you are reverting in the models
 $ git reset --hard HEAD~1
+or find the hash of commit to be rolled back to  and ...
+$ git reset --hard <hash>
+
+ADD CUSTOM MIGRATION
+---
+1) create empty migration
+   $ python manage.py makemigrations store --empty
+   
