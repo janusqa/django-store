@@ -71,3 +71,14 @@ ADD CUSTOM MIGRATION
     The first arg migrates forwards to the new state of the db, the second 
     arg migrates backward to the past state of the db
     
+
+DJANGO ADMIN INTERFACE
+----
+1) in terminal "$ python manage.py createsuperuser"
+2) access interface and login "http://localhost:8000/admin
+3) creds admin/P@ssw0rd
+4) Can reset password wth  "$ python manage.py changepassword admin"
+5) can customize the Admin title header in the primary folder urls.py file see there for example
+6) register models for any app folder in the admin interface by configuring them 
+   in each app folder's admin.py file see store/admin.py for example
+7

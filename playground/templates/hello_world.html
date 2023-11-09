@@ -7,9 +7,15 @@
     </head>
     <body>
         {% if name %}
-        <h1>Hello {{ name }}</h1>
+            <h1>Hello {{ name }}</h1>
         {% else %}
-        <h1>Hello World</h1>
+            <h1>Hello World</h1>
         {% endif %}
+        <ul>
+            {% for result in results %}<li>{{ result.id }} - {{ result.customer.first_name }}</li>{% endfor %}
+        </ul>
+        <ul>
+            {% for raw_result in raw_results %}<li>{{ raw_result.id }} - {{ raw_result.title }}</li>{% endfor %}
+        </ul>
     </body>
 </html>
